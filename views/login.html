@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <input type="submit" value="Entrar">
+
+            <button type="button" onclick="window.location.href='/redefinir-senha'">Esquici minha Senha</button>
+
+            <p>Não tem uma conta?</p>
+            <a href="/cadastro">Registre-se aqui</a>
+        </form>
+    </div>
+</body>
+</html>

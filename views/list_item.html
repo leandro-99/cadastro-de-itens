@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Itens</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Itens Cadastrados</h1>
+
+        <ul id="list-itens"></ul>
+
+        <a href="/cadastro-itens">Cadastrar novo item</a> 
+
+        <script>
+            fetch('/itens')
+                .then(response => response.json())
+                .then(itens => {
+                    const listaItens = document.getElementById('list-itens');
+                    itens.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `Nome: ${item.nome}, Descrição: ${item.descricao}, Preço: ${item.preco}`; 
+
+                        // Adiciona botões de editar e deletar
+                        const editButton = document.createElement('button');
+                        editButton.textContent = 'Editar';
+                        editButton.onclick = () => window.location.href = `/editar-item/${item.id}`;
+                        
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Deletar';
+                        deleteButton.onclick = () => {
+                            if (confirm('Tem certeza de que deseja deletar este item?')) {
+                                fetch(`/deletar-item/${item.id}`, { method: 'DELETE' })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            alert('Item deletado com sucesso!');
+                                            listItem.remove(); // Remove o item da lista
+                                        } else {
+                                            alert('Erro ao deletar item.');
+                                        }
+                                    })
+                                    .catch(error => console.error('Erro ao deletar item:', error));
+                            }
+                        };
+
+                        listItem.appendChild(editButton);
+                        listItem.appendChild(deleteButton);
+                        listaItens.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Erro ao buscar itens:', error));
+        </script>
+    </div>
+</body>
+</html>

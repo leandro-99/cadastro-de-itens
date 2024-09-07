@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Item</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Item</h1>
+        <form action="/cadastrar-item" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao"></textarea><br>
+
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" required><br>
+
+            <input type="submit" value="Cadastrar Item">
+        </form>
+    </div>
+</body>
+</html>

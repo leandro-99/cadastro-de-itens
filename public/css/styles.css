@@ -1,0 +1,114 @@
+/* Define uma aparência básica para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.login-container {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Tamanho fixo do contêiner */
+    text-align: center;
+}
+
+/* Estilo para os inputs */
+input[type="email"], input[type="password"], input[type="text"], input[type="number"], textarea {
+    width: 100%; /* Ajusta os inputs para preencherem o contêiner */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    box-sizing: border-box; /* Garante que padding e largura estejam corretos */
+}
+
+/* Estilo para o botão de login */
+input[type="submit"] {
+    background-color: #357edd;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* O botão também ocupa toda a largura */
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #275fad;
+}
+
+h1 {
+    color: #5d9cec;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin: 10px 0;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #5d9cec;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #4a89dc;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilização da lista de itens */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e7e7e7;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Para centralizar os elementos no body */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
