@@ -20,7 +20,15 @@ router.get('/lista-itens', verificarLogin, (req, res) => {
 
 // Rota para buscar os itens do banco de dados
 router.get('/itens', (req, res) => {
-  connection.query('SELECT * FROM itens', (err, results) => {
+  c// Verifique se o usuário está logado
+  if (!req.session.usuario) {
+    return res.status(401).send('Você precisa estar logado para ver seus itens.');
+  }
+
+  const usuarioId = req.session.usuario.id;
+
+  connection.query('SELECT * FROM itens WHERE usuario_id = ?', [usuarioId], (err, results) => {
+    
     if (err) {
       console.error('Erro ao buscar itens:', err);
       res.status(500).send('Erro ao buscar itens.');
