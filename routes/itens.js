@@ -20,7 +20,7 @@ router.get('/lista-itens', verificarLogin, (req, res) => {
 
 // Rota para buscar os itens do banco de dados
 router.get('/itens', (req, res) => {
-  c// Verifique se o usuário está logado
+  // Verifique se o usuário está logado
   if (!req.session.usuario) {
     return res.status(401).send('Você precisa estar logado para ver seus itens.');
   }
